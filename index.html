@@ -1,0 +1,98 @@
+
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Strzelanka pod magazynami</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game"></div>
+
+<section id="lobby" class="screen">
+<h1>STRZELANKA<br>POD MAGAZYNAMI</h1>
+<div class="profile">
+<div id="avatar" class="avatar">🪖</div>
+<div><strong id="playerName">Gracz</strong><small>Poziom <span id="playerLevel">1</span></small></div>
+<div class="coinbox">🪙 <span id="lobbyCoins">0</span></div>
+</div>
+<div class="preview"><div id="characterPreview">🪖</div><p id="skinName">Żołnierz</p></div>
+<button id="playBtn" class="primary">▶ GRAJ</button>
+<div class="menu-grid">
+<button id="skinsBtn">👕 Skiny</button>
+<button id="shopBtn">🛒 Sklep i ulepszenia</button>
+<button id="missionsBtn">📋 Codzienne misje</button>
+<button id="achievementsBtn">🏅 Medale</button>
+<button id="passBtn">🎁 Battle Pass</button>
+<button id="statsBtn">📊 Statystyki</button>
+</div>
+<p class="hint">Postęp zapisuje się w tej przeglądarce.</p>
+</section>
+
+<section id="maps" class="screen hidden">
+<h2>WYBIERZ MAPĘ</h2>
+<button data-map="warehouse">🏭 Magazyny</button>
+<button data-map="city">🏙️ Miasto</button>
+<button data-map="desert">🏜️ Pustynia</button>
+<button data-map="base">🪖 Baza</button>
+<button class="backBtn">WRÓĆ</button>
+</section>
+
+<section id="skins" class="screen hidden">
+<h2>SKINY</h2><div id="skinItems" class="scroll-list"></div><button class="backBtn">WRÓĆ</button>
+</section>
+<section id="shop" class="screen hidden">
+<h2>SKLEP I ULEPSZENIA</h2>
+<p>Monety: 🪙 <span id="shopCoins">0</span></p>
+<div id="shopItems" class="scroll-list"></div><button class="backBtn">WRÓĆ</button>
+</section>
+<section id="missions" class="screen hidden">
+<h2>CODZIENNE MISJE</h2><p id="missionDate" class="hint"></p>
+<div id="missionItems" class="scroll-list"></div><button class="backBtn">WRÓĆ</button>
+</section>
+<section id="achievements" class="screen hidden">
+<h2>MEDALE I OSIĄGNIĘCIA</h2>
+<div id="achievementItems" class="scroll-list"></div><button class="backBtn">WRÓĆ</button>
+</section>
+<section id="battlepass" class="screen hidden">
+<h2>🎁 BATTLE PASS</h2><p>Poziom: <span id="passLevel">1</span>/50</p>
+<div class="progress"><div id="passProgress"></div></div>
+<div id="passItems" class="scroll-list"></div><button class="backBtn">WRÓĆ</button>
+</section>
+<section id="stats" class="screen hidden">
+<h2>STATYSTYKI</h2><div id="statsText"></div><button class="backBtn">WRÓĆ</button>
+</section>
+<section id="pause" class="screen hidden">
+<h2>PAUZA</h2><button id="resumeBtn">WRÓĆ DO GRY</button><button id="pauseMenuBtn">MENU</button>
+</section>
+<section id="gameOver" class="screen hidden">
+<h2>KONIEC GRY</h2><p>Dotarłeś do fali <b id="finalWave">1</b></p>
+<button id="againBtn">ZAGRAJ PONOWNIE</button><button id="overMenuBtn">MENU</button>
+</section>
+
+<div id="hud" class="hidden">
+<div class="topbar">
+<span>❤️ <b id="hp">100</b></span>
+<span>🌊 <b id="wave">1</b>/50+</span>
+<span>🪙 <b id="coins">0</b></span>
+<span>🔫 <b id="ammo">12/48</b></span>
+<button id="pauseBtn">Ⅱ</button>
+</div>
+<div id="weaponLabel">PISTOLET</div>
+<div id="crosshair">+</div>
+<div id="shotFlash"></div>
+<div id="message"></div>
+<canvas id="radar" width="150" height="150"></canvas>
+<div id="mobileControls">
+<div id="joystick"><div id="stick"></div></div>
+<button id="fireBtn" class="fire">STRZAŁ</button>
+<button id="reloadBtn">R</button>
+<button id="jumpBtn">↑</button>
+<button id="switchBtn">BROŃ</button>
+</div>
+<div id="desktopHint">WASD – ruch · Mysz – rozglądanie · Klik – strzał · 1/2/3 – broń · R – przeładuj</div>
+</div>
+<script type="module" src="script.js"></script>
+</body>
+</html>
